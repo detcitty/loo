@@ -31,8 +31,9 @@ arXiv preprint arXiv:1507.02646.
 
 from __future__ import division # For Python 2 compatibility
 import numpy as np
-import gpdfitnew
-import gpinv
+from gpdfitnew import gpdfitnew
+from gpinv import gpinv
+from sumlogs import sumlogs
 
 def psislw(lw, wcpp=20, wtrunc=3/4, overwrite_lw=False):
     """Pareto smoothed importance sampling (PSIS).

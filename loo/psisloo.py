@@ -31,8 +31,8 @@ arXiv preprint arXiv:1507.02646.
 
 from __future__ import division # For Python 2 compatibility
 import numpy as np
-import psislw
-import sumlogs
+from psisloo import psislw
+from sumlogs import sumlogs
 
 
 def psisloo(log_lik, **kwargs):
@@ -77,6 +77,7 @@ def psisloo(log_lik, **kwargs):
     lw += log_lik
     loos = sumlogs(lw, axis=0)
     loo = loos.sum()
+    
     return loo, loos, ks
 
 

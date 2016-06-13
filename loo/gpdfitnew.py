@@ -128,3 +128,5 @@ def gpdfitnew(x, sort=True):
     sigma = -k / b
     
     return k, sigma
+
+    
