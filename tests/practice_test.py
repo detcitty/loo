@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-%matplotlib inline
 
 
 import pandas as pd
@@ -15,8 +14,6 @@ from rpy2.robjects import pandas2ri
 pandas2ri.activate()
 
 
-
-R = ro.r
 
 import statsmodels.api as sm
 
@@ -73,10 +70,9 @@ nrow, ncol = mat.shape
 
 #print logit.results()
 data_loo = {'N': nrow , 'P': ncol, 'y': y, 'x': mat, 'a': s }
-print data['a']
 
 
-logistic = '''
+logistic = """
 data {
   int<lower=0> N; 
   int<lower=0> P;
@@ -98,7 +94,7 @@ generated quantities {
   for (n in 1:N)
     log_lik[n] <- bernoulli_logit_log(y[n], beta0 + x[n] * beta);
 }
-'''
+"""
 
 
-fit1 = pystan.stan(logistic, data=data_loo, iter=1000, chains=4)
+fit1 = pystan.stan(model_code=logistic, data=data_loo, iter=1000, chains=4)
