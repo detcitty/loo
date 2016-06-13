@@ -69,6 +69,36 @@ nrow, ncol = mat.shape
 #print np.array(mat['dist'])
 #print np.array(mat['arsenic'])
 
+
+
 #print logit.results()
 data_loo = {'N': nrow , 'P': ncol, 'y': y, 'x': mat, 'a': s }
 print data['a']
+
+
+logistic = '''
+data {
+  int<lower=0> N; 
+  int<lower=0> P;
+  int<lower=0,upper=1> y[N];
+  matrix[N,P] x; 
+  real a;
+}
+parameters {
+  real beta0;
+  vector[P] beta;
+}
+model {
+  beta0 ~ student_t(7, a, 0.1);
+  beta ~ student_t(7, 0, 1);
+  y ~ bernoulli_logit(beta0 + x * beta);
+}
+generated quantities {
+  vector[N] log_lik;
+  for (n in 1:N)
+    log_lik[n] <- bernoulli_logit_log(y[n], beta0 + x[n] * beta);
+}
+'''
+
+
+fit1 = pystan.stan(logistic, data=data_loo, iter=1000, chains=4)
