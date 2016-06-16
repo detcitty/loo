@@ -12,7 +12,7 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    'Click>=6.0', 'pystan'
+    'Click>=6.0', 'pystan', 'patsy', 'numpy', 'pandas', 'statsmodels.api'
     # TODO: put package requirements here
 ]
 
@@ -39,7 +39,7 @@ setup(
         ]
     },
     include_package_data=False,
-    install_requires=requirements,,
+    install_requires=requirements,
     license="GNU General Public License v3",
     zip_safe=False,
     keywords='loo',
