@@ -12,7 +12,12 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    'Click>=6.0', 'pystan', 'patsy', 'numpy', 'pandas', 'statsmodels.api'
+    'Click>=6.0', 
+    'pystan', 
+    'patsy', 
+    'numpy', 
+    'pandas', 
+    #'statsmodels.api'
     # TODO: put package requirements here
 ]
 
