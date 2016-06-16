@@ -31,7 +31,7 @@ arXiv preprint arXiv:1507.02646.
 
 from __future__ import division # For Python 2 compatibility
 import numpy as np
-from psisloo import psislw
+from psislw import psislw
 from sumlogs import sumlogs
 
 
