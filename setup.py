@@ -12,7 +12,7 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    'Click>=6.0',
+    'Click>=6.0', 'pystan'
     # TODO: put package requirements here
 ]
 
@@ -38,8 +38,8 @@ setup(
             'loo=loo.cli:main'
         ]
     },
-    include_package_data=True,
-    install_requires=requirements,
+    include_package_data=False,
+    install_requires=requirements,,
     license="GNU General Public License v3",
     zip_safe=False,
     keywords='loo',
