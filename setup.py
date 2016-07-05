@@ -14,15 +14,16 @@ with open('HISTORY.rst') as history_file:
 requirements = [
     'Click>=6.0', 
     'pystan', 
-    'patsy', 
-    'numpy', 
-    'pandas', 
+ 
     #'statsmodels.api'
     # TODO: put package requirements here
 ]
 
 test_requirements = [
     # TODO: put package test requirements here
+    'patsy', 
+    'numpy', 
+    'pandas',
 ]
 
 setup(
