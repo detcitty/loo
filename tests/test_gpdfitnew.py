@@ -13,3 +13,18 @@ test_that("gpdfit returns correct result", {
 })
 
 """
+
+import numpy as np
+import pytest
+from loo.gpdfitnew import gpdfitnew
+
+
+def test_emptyArray():
+	x = np.ndarray([])
+	with pytest.raises(ValueError):
+		gpdfitnew(x)
+
+def test_sort():
+	x = np.ones((5, ), dtype=bool)
+	print x
+	assert gpdfitnew(x) 
