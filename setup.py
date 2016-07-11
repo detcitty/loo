@@ -11,6 +11,8 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
+
+
 requirements = [
     'Click>=6.0', 
     'pystan', 
@@ -19,8 +21,13 @@ requirements = [
     # TODO: put package requirements here
 ]
 
+setup_requirements = [
+    'pytest-runner'
+]
+
 test_requirements = [
     # TODO: put package test requirements here
+    'pytest',
     'patsy', 
     'numpy', 
     'pandas',
@@ -46,6 +53,7 @@ setup(
     },
     include_package_data=False,
     install_requires=requirements,
+    setup_requires=setup_requirements, 
     license="GNU General Public License v3",
     zip_safe=False,
     keywords='loo',
