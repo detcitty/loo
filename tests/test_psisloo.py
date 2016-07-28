@@ -7,7 +7,7 @@ x <- matrix(rnorm(5000), 100, 50) (100 rows by 50 columns)
 """
 import loo
 import random
-import numpy
+import numpy as np
 
 random.seed(123)
 x = numpy.random.normal(size=(100, 50))

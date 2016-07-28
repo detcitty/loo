@@ -25,3 +25,10 @@ test_that("psislw handles special cases, throws appropriate errors/warnings", {
                regexp = "'lw' or 'llfun' and 'llargs' must be specified")
 })
 """
+
+
+from loo.psisloo import psislw
+import random
+import numpy as np
+import pytest
+

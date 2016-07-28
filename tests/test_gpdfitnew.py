@@ -28,3 +28,9 @@ def test_sort():
 	x = np.ones((5, ), dtype=bool)
 	print x
 	assert gpdfitnew(x) 
+
+def test_unsorted():
+	x = np.ones((100,100), dtype=bool)
+	print x
+
+test_unsorted()

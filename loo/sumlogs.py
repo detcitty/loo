@@ -39,11 +39,13 @@ def sumlogs(x, axis=None, out=None):
     Calculates np.log(np.sum(np.exp(x), axis=axis)) in such a fashion that it
     works even when elements have large magnitude.
     
-    """
+    """    
+
     maxx = x.max(axis=axis, keepdims=True)
     xnorm = x - maxx
-    np.exp(xnorm, out=xnorm)
-    out = np.sum(xnorm, axis=axis, out=out)
+    xnorm = np.exp(xnorm) 
+    out = np.sum(xnorm)
+
     if isinstance(out, np.ndarray):
         np.log(out, out=out)
     else:
