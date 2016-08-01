@@ -2,33 +2,27 @@
 # This file will be regenerated if you run travis_pypi_setup.py
 
 language: python
-sudo: false
-os:
-        -linux
-git:
-        submodules: false
-before_install:
-        - git submodule update --init --recursive
-python: 3.5
-
+python: 2.7
 env:
-  - TRAVIS_PYTHON_VERSION=2.7
-  - TRAVIS_PYTHON_VERSION=3.3
-  - TRAVIS_PYTHON_VERSION=3.4
-  - TRAVIS_PYTHON_VERSION=3.5
+ - TOX_ENV=py
+ - TOX_ENV=py24
+ - TOX_ENV=py25
+ - TOX_ENV=py26
+ - TOX_ENV=py27
+ - TOX_ENV=py30
+ - TOX_ENV=py31
+ - TOX_ENV=py32
+ - TOX_ENV=py33
+ - TOX_ENV=py34
+ - TOX_ENV=py34
+ - TOX_ENV=jython
+ - TOX_ENV=pypy 
+ - TOX_ENV=pypy3
 
-notifications:
-  email:
-    recipients:
-        - devin.etcitty@columbia.edu
-    on_success: change
-    on_failure: always
 
-
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -U pytest
-
-# command to run tests, e.g. python setup.py test
-script: py.test -e ${TRAVIS_PYTHON_VERSION}
+install:
+ - pip install tox
+script:
+ - tox -e $TOX_ENV
 
 
