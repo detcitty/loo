@@ -1,0 +1,2 @@
+# NOTE: these requirements need to be fixed in setup.py as well
+numpy>=1.7,<2.0

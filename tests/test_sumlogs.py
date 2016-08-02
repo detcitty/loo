@@ -15,13 +15,6 @@ def test_empty_list():
 	with pytest.raises(ValueError):
 		sumlogs(x)
 
-def test_large_log():
-	x = np.array([100000000,100303050, 10039503, 10000301], dtype=int)
-
-	assert sumlogs(x) == 100303050.0
-
-	#with pytest.raises(MemoryError):
-		#sumlogs(x)
 def test_int_large():
 	test_values = np.array([100000, 10000000, 10000, 1000000, 100000000])
 

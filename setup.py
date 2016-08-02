@@ -12,17 +12,8 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 
-
 requirements = [
-    'Click>=6.0', 
-    'pystan', 
- 
-    #'statsmodels.api'
-    # TODO: put package requirements here
-]
-
-setup_requirements = [
-    'pytest-runner'
+        'numpy >= 1.7'
 ]
 
 test_requirements = [
@@ -52,8 +43,7 @@ setup(
         ]
     },
     include_package_data=False,
-    install_requires=requirements,
-    setup_requires=setup_requirements, 
+    install_requires=requirements, 
     license="GNU General Public License v3",
     zip_safe=False,
     keywords='loo',
@@ -72,4 +62,4 @@ setup(
     ],
     test_suite='tests',
     tests_require=test_requirements
-)
+    )
