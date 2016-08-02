@@ -31,9 +31,8 @@ arXiv preprint arXiv:1507.02646.
 
 from __future__ import division # For Python 2 compatibility
 import numpy as np
-from psislw import psislw
-from sumlogs import sumlogs
-
+from loo.psislw import psislw
+from loo.sumlogs import sumlogs
 
 def psisloo(log_lik, **kwargs):
     """PSIS leave-one-out log predictive densities.
