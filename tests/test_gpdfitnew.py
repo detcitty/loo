@@ -33,3 +33,10 @@ def test_unsorted():
 	x = np.ones((100,100), dtype=bool)
 	print(x)
 
+def test_correct_result():
+    np.random.seed(123)
+    x = np.random.exponential(size=100)
+    gpdfit_val = gpdfitnew(x)
+    gpdfit_ans = np.array([0.0274030348712631, 1.01829821712701])
+    np.testing.assert_array_equal(gpdfit_val, gpdfit_ans)
+
