@@ -11,6 +11,7 @@ env:
 install:
  - pip install tox
 script:
- - tox -e $TOX_ENV
+ - python setup.py install
+ - py.test
 
 
