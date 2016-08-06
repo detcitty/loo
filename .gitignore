@@ -60,3 +60,7 @@ target/
 
 # Virtual Environment
 .env
+
+
+#Python swap file
+.swp

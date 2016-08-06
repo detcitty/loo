@@ -10,6 +10,18 @@ Included functions
 gpinv
     Inverse Generalised Pareto distribution function.
 
+Parameters
+----------
+    p : ndarray
+    
+    k : float
+
+    sigma : float
+
+
+Returns
+-------
+    x : ndarray
 References
 ----------
 Aki Vehtari, Andrew Gelman and Jonah Gabry (2015). Efficient implementation
