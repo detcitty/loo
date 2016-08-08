@@ -22,6 +22,7 @@ Parameters
 Returns
 -------
     x : ndarray
+    
 References
 ----------
 Aki Vehtari, Andrew Gelman and Jonah Gabry (2015). Efficient implementation
